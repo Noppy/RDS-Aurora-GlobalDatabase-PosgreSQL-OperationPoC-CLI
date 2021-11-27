@@ -275,7 +275,7 @@ done
 
 
 ## (3)フェイルオーバーテスト
-### (6)-(a)プライマリーリージョン内でのインスタンスフェイルオーバーテスト
+### (3)-(a)プライマリーリージョン内でのインスタンスフェイルオーバーテスト
 以下は作業用コンソールで実行します。事前に以下のパラメータ設定をしている前提とします。
 - `(1)-(b) CLI実行用の事前準備`のプロファイルとリージョンに関する変数
 - `(4)-(a) RDS設定`のRDBに関する変数
@@ -296,7 +296,7 @@ aws --profile ${PROFILE} --region ${PRIMARY_REGION} --no-cli-pager \
         --target-db-instance-identifier "<昇格させたいDBインスタンスの識別子>"
 ```
 
-### (6)-(b)グローバルデータベースのセカンダリリージョンへのフェイルオーバーテスト(計画切替)
+### (3)-(b)グローバルデータベースのセカンダリリージョンへのフェイルオーバーテスト(計画切替)
 計画切り替えの場合は、プライマリーリージョンで操作します。
 #### (i)プライマリーリージョンからセカンダリリージョンへのフェイルオーバー
 ```shell
@@ -331,7 +331,7 @@ aws rds --profile ${PROFILE} --region ${SECONDARY_REGION} --no-cli-pager \
 ```
 
 
-### (6)-(c)被災時のセカンダリリージョンのぃのクラスター昇格
+### (3)-(c)被災時のセカンダリリージョンのぃのクラスター昇格
 こちらは別途検証。
 
 ドキュメント[予期しない停止からの Amazon Aurora グローバルデータベースの復旧](https://docs.aws.amazon.com/ja_jp/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-failover)参照。
